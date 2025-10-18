@@ -25,7 +25,7 @@ setNews(filteredNews)
 
     return (
         <div>
-        <h3 className='font-semibold text-accent'>Total news <span className='text-secondary'>({news.length})</span> are found</h3> 
+        <h3 className='mb-5 font-semibold text-accent'>Total news <span className='text-secondary'>({news.length})</span> are found</h3> 
         <div className='grid grid-cols-1 gap-7'>
             {
                 news.map(news=><NewsCard key={news.id} news={news}></NewsCard>)

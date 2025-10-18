@@ -2,7 +2,7 @@ import React from 'react';
 import { Outlet } from 'react-router';
 import Header from '../Components/Header';
 import LatestNews from '../Components/LatestNews';
-import Navbar from '../Navbar';
+import Navbar from '../Components/Navbar';
 import Leftaside from '../Components/Leftaside';
 import RightAside from '../Components/RightAside';
 
@@ -18,14 +18,14 @@ const Root = () => {
                 <Navbar></Navbar>
                 </section>
             </header>
-         <main className='w-11/12 mx-auto grid gap-6 grid-cols-12'>
-               <section className="left-nav col-span-3">
+         <main className='w-11/12 mx-auto grid gap-6 grid-cols-12 mt-18'>
+               <section className="left-nav sticky top-0 h-fit col-span-3">
                 <Leftaside></Leftaside>
                </section>
             <section className="main col-span-6">
 <Outlet></Outlet>
             </section>
-            <section className="right-nav col-span-3">
+            <section className="right-nav sticky top-0 h-fit col-span-3">
                 <RightAside></RightAside>
             </section>
          </main>

@@ -1,4 +1,5 @@
 import { FaShareAlt, FaEye, FaStar, FaRegBookmark } from "react-icons/fa";
+import { Link } from "react-router";
 
 const NewsCard = ({ news }) => {
   const {
@@ -8,6 +9,7 @@ const NewsCard = ({ news }) => {
     details,
     rating,
     total_view,
+    id
    
   } = news;
 
@@ -54,17 +56,17 @@ const NewsCard = ({ news }) => {
       {/* Details */}
       <p className="text-accent p-4 text-sm mb-2">
         {details.slice(0, 200)}...
-        <span className="text-orange-500 font-medium cursor-pointer hover:underline">
+        <Link to={`/news-details/${id}`} className="text-orange-500 font-medium cursor-pointer hover:underline">
           {" "}
     Read more
-        </span>
+        </Link>
       </p>
       <div className="divider p-4"></div>
 
       {/* Footer Info */}
       <div className="flex p-4 items-center justify-between mt-3  pt-3 text-sm text-gray-600">
         <div className="flex items-center gap-1 text-orange-500">
-          <FaStar />
+          {rating.number===5 ? <div className="flex gap-1"><FaStar></FaStar> <FaStar></FaStar> <FaStar></FaStar> <FaStar></FaStar> <FaStar></FaStar></div> : rating.number===4 ?<div className="flex gap-1"><FaStar></FaStar> <FaStar></FaStar> <FaStar></FaStar> <FaStar></FaStar></div> : <div className="flex gap-1"><FaStar></FaStar> <FaStar></FaStar> <FaStar></FaStar></div> }
           <span className="text-gray-800 font-semibold">{rating?.number}</span>
         </div>
         <div className="flex items-center gap-1">
